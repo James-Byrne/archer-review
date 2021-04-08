@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'archer-review',
     environment,
-    rootURL: '/',
+    rootURL: 'archer-review',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
