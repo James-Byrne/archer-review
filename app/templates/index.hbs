@@ -1,0 +1,61 @@
+<div class="my-6" {{did-insert this.setupStream}}>
+  {{#if this.showErrorInfo}}
+    <div class="relative max-w-5xl text-center mx-auto border  shadow-lg rounded-lg bg-white overflow-hidden">
+      <div class="text-lg py-5 bg-red-500 text-white">Using Archers Review</div>
+      <div class="p-5 text-left">
+        In order to run this application you need to give video &amp; audio permissions. Why I hear you ask? Well this website works by using your webcam (or camera if your on a phone) to create a livestream (the first video below). Every <code class="text-red-400">n</code> seconds that livestream is then replayed to you in the second video (delayed stream) so you can review your shooting form.
+
+        <span class="font-bold">Most importantly</span> all video and audio is stored locally on the machine and is never sent anywhere. If you need confirmation of this you can find the code for the project <a class="text-blue-500 underline" href="https://github.com/James-Byrne/archer-review">here</a>.
+      </div>
+    </div>
+  {{/if}}
+
+  <div class="my-6"></div>
+
+  <div class="relative max-w-5xl text-center mx-auto border shadow-lg rounded-lg bg-white overflow-hidden">
+    <div class="text-2xl py-5 bg-blue-800 text-white">
+      <button
+        type="button"
+        class="absolute top-4 left-4 p-2 rounded-full bg-white hover:bg-blue-100 shadow-xl hover:shadow-2xl"
+        {{on "click" this.toggleLiveStream}}
+        >
+        {{#if this.showLiveStream}}
+          <img class="h-6 w-6" src="images/svg/octicons/chevron-up.svg" alt="show live stream">
+        {{else}}
+          <img class="h-6 w-6" src="images/svg/octicons/chevron-down.svg" alt="hide live stream">
+        {{/if}}
+      </button>
+      <span>Live stream</span>
+      <button
+        type="button"
+        class="absolute top-4 right-4 p-2 rounded-full bg-white hover:bg-blue-100"
+        {{on "click" this.downloadLiveStream}}
+        >
+        <img class="h-6 w-6" src="images/svg/octicons/arrow-down.svg" alt="download">
+      </button>
+    </div>
+    <video class="{{if this.showLiveStream "" "hidden"}}" autoplay="true" id="video" controls />
+  </div>
+
+  <div class="my-6"></div>
+
+  <div class="relative max-w-5xl text-center mx-auto border  shadow-lg rounded-lg bg-white overflow-hidden">
+    <div class="text-2xl py-5 bg-blue-800 text-white">
+      <button
+        type="button"
+        class="absolute top-4 left-4 p-2 rounded-full bg-white hover:bg-blue-100"
+        {{on "click" this.toggleDelayedStream}}
+        >
+        {{#if this.showDelayedStream}}
+          <img class="h-6 w-6" src="images/svg/octicons/chevron-up.svg" alt="show delayed stream">
+        {{else}}
+          <img class="h-6 w-6" src="images/svg/octicons/chevron-down.svg" alt="hide delayed stream">
+        {{/if}}
+      </button>
+      <span>Delayed stream</span>
+    </div>
+    <video class="{{if this.showDelayedStream "" "hidden"}}" autoplay="true" id="delayedVideo" controls />
+  </div>
+
+  {{outlet}}
+</div>

@@ -1,30 +1,11 @@
-<div class="bg-gray-100">
-  <div class="flex justify-center py-5 text-3xl text-white bg-blue-800 border-t-8 border-blue-900">
-    Archers Review
+<div class="min-h-screen bg-gray-100">
+  <div class="flex justify-between items-baseline p-5 text-white bg-blue-800 border-t-8 border-blue-900">
+    <LinkTo class="text-3xl" @route="index">
+      <span class="hidden md:block">Archers Review</span>
+      <span class="md:hidden block">AR</span>
+    </LinkTo>
+    <LinkTo class="text-lg" @route="about">FAQ</LinkTo>
   </div>
 
-  <div class="my-6"></div>
-
-  <div class="relative max-w-5xl text-center mx-auto border border-blue-900 shadow-lg rounded-lg bg-white overflow-hidden">
-    <div class="text-2xl py-5 bg-blue-800 text-white">
-      <span>Live stream</span>
-      <button
-        type="button"
-        class="absolute top-4 right-4 p-2 rounded-full bg-white hover:bg-blue-100 shadow-xl hover:shadow-2xl"
-        {{on "click" this.downloadLiveStream}}
-        >
-        <img class="h-6 w-6" src="images/svg/octicons/arrow-down.svg" alt="download">
-      </button>
-    </div>
-    <video autoplay="true" id="video" controls {{did-insert this.setupStream}} />
-  </div>
-
-  <div class="my-6"></div>
-
-  <div class="relative max-w-5xl text-center mx-auto border border-blue-900 shadow-lg rounded-lg bg-white overflow-hidden">
-    <div class="text-2xl py-5 bg-blue-800 text-white">Delayed stream</div>
-    <video autoplay="true" id="delayedVideo" controls />
-  </div>
-
-  <div class="my-6"></div>
+  {{outlet}}
 </div>

@@ -20,7 +20,7 @@ const purgeCSS = {
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     octicons: {
-      icons: ['arrow-down']
+      icons: ['arrow-down', 'chevron-down', 'chevron-up']
     },
     postcssOptions: {
       compile: {
