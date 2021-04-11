@@ -1,0 +1,23 @@
+<div class="my-6">
+  <div class="relative max-w-5xl text-center mx-auto border  shadow-lg rounded-lg bg-white overflow-hidden">
+    <div class="text-2xl py-5 bg-blue-800 text-white">FAQ</div>
+    <div class="p-5 text-left">
+
+      <h2 class="text-lg font-bold">What is this app?</h2>
+      <p class="mb-2">This is a small application I built in order to review my shooting while I made considerable form changes. Being able to see myself while I made changes was a huge benefit as I could see the differences between what felt good and what looked correct.</p>
+
+      <h2 class="text-lg font-bold mt-3 mb-2">How does it work?</h2>
+      <p class="mb-2">This application creates a livestream and a delayed video. The livestream is useful to see the application is working and also allows you to download the video stream (more on that below). The second stream is the real useful one. It displays the livestream but with a 10 second delay. This allows an archer to review their previous shot while loading their next arrow.</p>
+      <p class="mb-2">This app also doesn't send the livestream anywhere else, it's all done locally through the browser wthout any processing or servers to back it up. So your data is never leaves your device (see next section for the code) and you can <span class="italic">"download"</span> the livestream which essentially just moves the file from your browsers storage into your downloads folder. So don't worry if your downloaded file is quite big, it won't use any broadband to move it.</p>
+
+      <h2 class="text-lg font-bold mt-3 mb-2">Download gives a webm file?</h2>
+      <p class="mb-2">So this is the main downside to this application. Since all the video is recorded locally I am restricted to recording in the <span class="font-mono text-red-400">.webm</span> format. You can use a tool like <span class="font-mono text-red-400">ffmpeg</span> to turn your webm file into an mp4 file but you will need to find a service for this. In the meantime any browser should be able to play your downloaded stream.</p>
+
+
+      <h2 class="text-lg font-bold mt-3 mb-2">Where is the code?</h2>
+      <p class="mb-2">If your interested in the code for this app or want to deploy your own version <a class="text-blue-500 underline" href="https://github.com/James-Byrne/archer-review">you can find it on github here.</a></p>
+    </div>
+  </div>
+
+  {{outlet}}
+</div>
