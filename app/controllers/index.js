@@ -71,7 +71,7 @@ export default class extends Controller {
       });
       this.setupLiveStream(this.stream);
       this.setupRecordingStream(this.stream);
-      setInterval(() => this.setupRecordingStream(this.stream), 10000);
+      setInterval(() => this.setupRecordingStream(this.stream), 15000);
     } catch (e) {
       this.showErrorInfo = true;
     }
